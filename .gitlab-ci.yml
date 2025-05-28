@@ -26,11 +26,9 @@ deploy-prod:
       when: always
     - when: never
   script:
-    # - pwd
-    # - ls -la
-    # - mkdir -p /var/www
-    # - rm -rf /var/www/*
-    # - cp -r ./* /var/www/
-    # - ls -la /var/www/
-    - gitlab-runner list
-    - cat /etc/gitlab-runner/config.toml
+    - pwd
+    - ls -la
+    - mkdir -p /var/www
+    - rm -rf /var/www/*
+    - cp -r ./* /var/www/
+    - ls -la /var/www/
