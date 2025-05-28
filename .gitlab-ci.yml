@@ -12,6 +12,7 @@ deploy-dev:
   script:
     - pwd
     - ls -la
+    - mkdir -p /var/www
     - rm -rf /var/www/*
     - cp -r ./* /var/www/
     - ls -la /var/www/
@@ -27,6 +28,7 @@ deploy-prod:
   script:
     - pwd
     - ls -la
+    - mkdir -p /var/www
     - rm -rf /var/www/*
     - cp -r ./* /var/www/
     - ls -la /var/www/
