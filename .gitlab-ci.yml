@@ -1,0 +1,24 @@
+stages:
+  - deploy
+
+deploy-dev:
+  stage: deploy
+  tags:
+    - dev
+  only:
+    - develop
+  script:
+    - rm -rf /var/www/*
+    - cp -r . /var/www/
+    - chown -R www-data:www-data /var/www/
+
+deploy-prod:
+  stage: deploy
+  tags:
+    - prod
+  only:
+    - main
+  script:
+    - rm -rf /var/www/*
+    - cp -r . /var/www/
+    - chown -R www-data:www-data /var/www/
