@@ -8,9 +8,9 @@ deploy-dev:
   only:
     - develop
   script:
-    - rm -rf /var/www/*
-    - cp -r . /var/www/
-    - chown -R www-data:www-data /var/www/
+    - ls -la README.md || echo "README.md not found"
+    - sudo cp README.md /var/www/ || echo "Failed to copy README.md"
+    - ls -la /var/www/README.md || echo "README.md not found in destination"
 
 deploy-prod:
   stage: deploy
@@ -19,6 +19,6 @@ deploy-prod:
   only:
     - main
   script:
-    - rm -rf /var/www/*
-    - cp -r . /var/www/
-    - chown -R www-data:www-data /var/www/
+    - ls -la README.md || echo "README.md not found"
+    - sudo cp README.md /var/www/ || echo "Failed to copy README.md"
+    - ls -la /var/www/README.md || echo "README.md not found in destination"
