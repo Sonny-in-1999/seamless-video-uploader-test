@@ -12,9 +12,9 @@ deploy-dev:
   script:
     - pwd
     - ls -la
-    - sudo rm -rf /var/www/*
-    - sudo cp -r ./* /var/www/
-    - sudo ls -la /var/www/
+    - rm -rf /var/www/*
+    - cp -r ./* /var/www/
+    - ls -la /var/www/
 
 deploy-prod:
   stage: deploy
@@ -27,6 +27,6 @@ deploy-prod:
   script:
     - pwd
     - ls -la
-    - sudo rm -rf /var/www/*
-    - sudo cp -r ./* /var/www/
-    - sudo ls -la /var/www/
+    - rm -rf /var/www/*
+    - cp -r ./* /var/www/
+    - ls -la /var/www/
