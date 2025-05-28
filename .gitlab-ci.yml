@@ -5,8 +5,10 @@ deploy-dev:
   stage: deploy
   tags:
     - dev
-  only:
-    - develop
+  rules:
+    - if: $CI_COMMIT_BRANCH == "develop"
+      when: always
+    - when: never
   script:
     - ls -la README.md || echo "README.md not found"
     - sudo cp README.md /var/www/ || echo "Failed to copy README.md"
@@ -16,8 +18,10 @@ deploy-prod:
   stage: deploy
   tags:
     - prod
-  only:
-    - main
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: always
+    - when: never
   script:
     - ls -la README.md || echo "README.md not found"
     - sudo cp README.md /var/www/ || echo "Failed to copy README.md"
