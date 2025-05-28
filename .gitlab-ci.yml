@@ -10,9 +10,11 @@ deploy-dev:
       when: always
     - when: never
   script:
-    - ls -la README.md || echo "README.md not found"
-    - sudo cp README.md /var/www/ || echo "Failed to copy README.md"
-    - ls -la /var/www/README.md || echo "README.md not found in destination"
+    - pwd
+    - ls -la
+    - sudo rm -rf /var/www/*
+    - sudo cp -r ./* /var/www/
+    - sudo ls -la /var/www/
 
 deploy-prod:
   stage: deploy
@@ -23,6 +25,8 @@ deploy-prod:
       when: always
     - when: never
   script:
-    - ls -la README.md || echo "README.md not found"
-    - sudo cp README.md /var/www/ || echo "Failed to copy README.md"
-    - ls -la /var/www/README.md || echo "README.md not found in destination"
+    - pwd
+    - ls -la
+    - sudo rm -rf /var/www/*
+    - sudo cp -r ./* /var/www/
+    - sudo ls -la /var/www/
