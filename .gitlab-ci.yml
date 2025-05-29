@@ -14,25 +14,23 @@ deploy-dev:
   script:
     - pwd
     - ls -la
-    - mkdir -p /var/www
-    - rm -rf /var/www/*
-    - cp -r ./* /var/www/
-    - ls -la /var/www/
+    - mkdir -p /srv/botherless-vc/library
+    - rm -rf /srv/botherless-vc/library/*
+    - cp -r ./* /srv/botherless-vc/library/
+    - ls -la /srv/botherless-vc/library/
 
 deploy-prod:
   stage: deploy
   tags:
     - prod
   rules:
-    - if: $CI_COMMIT_BRANCH == "main"
-      when: always
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
-      when: always
+    - if: $CI_COMMIT_BRANCH == "main" && $CI_PIPELINE_SOURCE == "web"
+      when: manual
     - when: never
   script:
     - pwd
     - ls -la
-    - mkdir -p /var/www
-    - rm -rf /var/www/*
-    - cp -r ./* /var/www/
-    - ls -la /var/www/
+    - mkdir -p /srv/botherless-vc/library
+    - rm -rf /srv/botherless-vc/library/*
+    - cp -r ./* /srv/botherless-vc/library/
+    - ls -la /srv/botherless-vc/library/
