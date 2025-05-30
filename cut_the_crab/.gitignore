@@ -35,3 +35,5 @@ cut_the_crab-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# vscode
+.vscode/
