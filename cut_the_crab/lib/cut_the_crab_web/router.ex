@@ -17,7 +17,7 @@ defmodule CutTheCrabWeb.Router do
   scope "/", CutTheCrabWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get "/", PageController, :redirect_to_upload
     live "/upload", VideoUploadLive
   end
 

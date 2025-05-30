@@ -22,3 +22,13 @@
 /var/log/
 └── botherless-vc/    # BotherlessVC 관련 로그파일
 ```
+
+## 로컬 환경 실행
+
+(Erlang/OTP 27 버전 및 해당 버전에 맞는 Elixir가 설치되어있다고 가정합니다.)
+
+```bash
+cd cut_the_crab
+mix deps.get
+mix phx.server
+```
